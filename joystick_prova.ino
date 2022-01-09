@@ -13,12 +13,8 @@ const bool _y=1;
 int joystick_right_x=A0;
 int joystick_right_y=A1;
 
-
 int joystick_left_x=A2;
 int joystick_left_y=A3;
-
-
-
 
 RF24 radio(8, 10); // CE, CSN
 const byte address[6] = "00001"; //same address must BE ON THE RECEIVER
@@ -38,5 +34,18 @@ void loop(){
   controller[_left][_x]=analogRead(joystick_left_x);
   controller[_left][_y]=analogRead(joystick_left_y);
   
+  Serial.println("right x value ");
+  Serial.print(controller[_right][_x]);
+  
+    Serial.println("right y value ");
+  Serial.print(controller[_right][_y]);
+   
+    Serial.println("left x value ");
+  Serial.print(controller[_left][_x]);
+  
+   
+    Serial.println("left y value ");
+  Serial.print(controller[_left][_x]);
+    
   
 }
