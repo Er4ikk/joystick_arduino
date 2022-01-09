@@ -47,5 +47,5 @@ void loop(){
     Serial.println("left y value ");
   Serial.print(controller[_left][_x]);
     
-  
+  radio.write(&controller,4*sizeof(int));
 }
