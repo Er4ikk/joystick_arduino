@@ -12,13 +12,11 @@ const bool _y=1;
 
 int joystick_right_x=A0;
 int joystick_right_y=A1;
-int value_right_x=0;
-int value_right_y=0;
+
 
 int joystick_left_x=A2;
 int joystick_left_y=A3;
-int value_left_x=0;
-int value_left_y=0;
+
 
 
 
@@ -34,4 +32,11 @@ void setup(){
   radio.stopListening();    //Setting this arduino as a trasmitter
 }
 
-void loop(){}
+void loop(){
+  controller[_right][_x]=analogRead(joystick_right_x);
+  controller[_right][_y]=analogRead(joystick_right_y);
+  controller[_left][_x]=analogRead(joystick_left_x);
+  controller[_left][_y]=analogRead(joystick_left_y);
+  
+  
+}
