@@ -26,6 +26,12 @@ RF24 radio(8, 10); // CE, CSN
 const byte address[6] = "00001"; //same address must BE ON THE RECEIVER
 
 
-void setup(){}
+void setup(){
+  Serial.begin(9600);
+  radio.begin();                  //Starting the Wireless communication
+  radio.openWritingPipe(address); //Setting the address where we will send the data
+  radio.setPALevel(RF24_PA_MIN);  //You can set it as minimum or maximum depending on the distance between the transmitter and receiver.
+  radio.stopListening();    //Setting this arduino as a trasmitter
+}
 
 void loop(){}
