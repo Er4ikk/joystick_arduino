@@ -13,6 +13,12 @@ int joystick_left_y=A3;
 int value_left_x=0;
 int value_left_y=0;
 
+
+
+RF24 radio(8, 10); // CE, CSN
+const byte address[6] = "00001"; //same address must BE ON THE RECEIVER
+
+
 void setup(){}
 
 void loop(){}
