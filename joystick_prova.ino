@@ -3,6 +3,13 @@
 #include <nRF24L01.h>
 #include <RF24.h>
 
+int controller[2][2];//0--c_mid[l/r][x/y]-->1023
+int c_mid[2][2]={{490,490},{490,490}};
+const bool _left=0;
+const bool _right=1;
+const bool _x=0;
+const bool _y=1;
+
 int joystick_right_x=A0;
 int joystick_right_y=A1;
 int value_right_x=0;
